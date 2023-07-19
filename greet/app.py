@@ -3,8 +3,9 @@ from flask import Flask, request
 app = Flask(__name__)
 
 @app.get('/welcome/<location>')
-def greet(location):
-    return f""""
+def special_greet(location):
+
+    return f"""
         <html>
             <body>
                 <h1>
@@ -14,3 +15,15 @@ def greet(location):
         <html>
     """
 
+@app.get('/welcome')
+def greet():
+
+    return f"""
+        <html>
+            <body>
+                <h1>
+                welcome
+                </h1>
+            </body>
+        <html>
+    """
